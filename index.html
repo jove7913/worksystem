@@ -1804,18 +1804,18 @@ function onPartNoInput() {
 function fillPartFields(part) {
   document.getElementById('partNameInput').value = part.partName;
   document.getElementById('carModelInput').value = part.carModel || '';
-  document.getElementById('sizeInput').value = part.size || '';
+  document.getElementById('sizeInput').value = sizeName(part.size);
   // 컬러 드롭다운을 해당 품번 컬러로만 채움
   const colorSel = document.getElementById('colorInput');
   const cols = part.colors || [];
-  colorSel.innerHTML = '<option value="">${t('add')}</option>' +
+  colorSel.innerHTML = `<option value="">${t('color')}</option>` +
     cols.map(c => `<option value="${c}">${c}</option>`).join('');
 }
 function clearPartFields() {
   document.getElementById('partNameInput').value = '';
   document.getElementById('carModelInput').value = '';
   document.getElementById('sizeInput').value = '';
-  document.getElementById('colorInput').innerHTML = '<option value="">품번 선택 후</option>';
+  document.getElementById('colorInput').innerHTML = `<option value="">${t('select_after')}</option>`;
 }
 function pickPart(partNo) {
   document.getElementById('partNoInput').value = partNo;
