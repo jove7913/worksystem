@@ -1878,7 +1878,7 @@ function resetPartsToDefault() {
 
 /* ---------- 초기화 ---------- */
 applyLogos();
-if (API_URL === "https://script.google.com/macros/s/AKfycbz-Alv5uP-olIN7uaEf2WdExnuaSS9kouamrhslhv1ikFKxvpt4LZJmPFicCMlqCPUMxw/exec" || !API_URL) {
+if (!API_URL || API_URL.indexOf('script.google.com') === -1) {
   alert('⚠️ API_URL이 설정되지 않았습니다.\n\nHTML 파일을 메모장으로 열어 상단의 API_URL 변수에 구글 Apps Script 웹앱 URL을 붙여넣어 주세요.');
 }
 </script>
